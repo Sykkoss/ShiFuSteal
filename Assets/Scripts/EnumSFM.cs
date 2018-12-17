@@ -7,6 +7,7 @@ public class EnumSFM : MonoBehaviour {
 	public enum SFM {
 		ROCK,
 		PAPER,
-		SCISSORS
+		SCISSORS,
+		NONE
 	};
 }
