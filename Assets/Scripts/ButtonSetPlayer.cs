@@ -29,12 +29,28 @@ public class ButtonSetPlayer : MonoBehaviour {
 		if (currentTurn == EnumTurnTypes.TurnTypes.P1SFM)
 		{
 			P1GameObject.SetSFMChoosen((EnumSFM.SFM)newSFM);
-			print("P1");
 		}
 		else if (currentTurn == EnumTurnTypes.TurnTypes.P2SFM)
 		{
 			P2GameObject.SetSFMChoosen((EnumSFM.SFM)newSFM);
-			print("P1");
+		}
+	}
+
+	public void SetPlayerAbility(int newAbility)
+	{
+		Character P1GameObject = GameObject.Find("/P1").GetComponent<Character>();
+		Character P2GameObject = GameObject.Find("/P2").GetComponent<Character>();
+		EnumTurnTypes.TurnTypes currentTurn = GameSystem.GetCurrentTurn();
+
+		if (P1GameObject == null || P2GameObject == null)
+			return;
+		if (currentTurn == EnumTurnTypes.TurnTypes.P1Ability)
+		{
+			P1GameObject.SetAbilityChoosen(newAbility);
+		}
+		else if (currentTurn == EnumTurnTypes.TurnTypes.P2Ability)
+		{
+			P2GameObject.SetAbilityChoosen(newAbility);
 		}
 	}
 
