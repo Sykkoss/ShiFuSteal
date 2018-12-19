@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 817, y: 492}
   m_MaxSize: {x: 22012, y: 14042}
   vertical: 0
-  controlID: 80
+  controlID: 123
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -382,18 +382,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Ressources/Materials
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Ressources/Materials
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\cosson_d\Documents\Unity Projects\ShiFuSteal
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 64270000
-    m_LastClickedID: 10084
+    m_SelectedIDs: a2270000
+    m_LastClickedID: 10146
     m_ExpandedIDs: 0000000030270000642700009a270000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -585,9 +585,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.013966389, y: 0.0052028787, z: 3.5546875}
+    m_Target: {x: -0.09614724, y: -0.12108956, z: 3.5479128}
     speed: 2
-    m_Value: {x: -0.013966389, y: 0.0052028787, z: 3.5546875}
+    m_Value: {x: -0.09614724, y: -0.12108956, z: 3.5479128}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -614,9 +614,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 11.485552
+    m_Target: 12.154891
     speed: 2
-    m_Value: 11.485552
+    m_Value: 12.154891
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -658,7 +658,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: f2f2ffffa6fbffff00000000a4280000
+    m_ExpandedIDs: a6fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

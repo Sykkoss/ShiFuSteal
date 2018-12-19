@@ -5,8 +5,13 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 
 	EnumTurnTypes.TurnTypes currentTurn;
 
-	public Character P1Character;
-	public Character P2Character;
+	public GameObject P1GameObject;
+	public GameObject P2GameObject;
+	Character P1Character;
+	Character P2Character;
+	Color P1DefaultColor;
+	Color P2DefaultColor;
+	public Material NonPlayingCharacterMat;
 
 	int P1RoundsWon;
 	int P2RoundsWon;
@@ -26,8 +31,12 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 	private void Start()
 	{
 		currentTurn = EnumTurnTypes.TurnTypes.P1SFM;
+		P1Character = P1GameObject.GetComponent<Character>();
+		P2Character = P2GameObject.GetComponent<Character>();
 		P1RoundsWon = 0;
 		P2RoundsWon = 0;
+		P1DefaultColor = P1GameObject.GetComponent<Renderer>().material.color;
+		P2DefaultColor = P2GameObject.GetComponent<Renderer>().material.color;
 	}
 
 	private bool CheckGameObjects()
@@ -54,10 +63,11 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 		switch(currentTurn)
 		{
 			case EnumTurnTypes.TurnTypes.P1SFM:
-				print("P1SFM");
 				// Activate SFM Buttons GameObject
 				SetActiveSFMButtons(true);
 				SetActiveAbilityButtons(false);
+				P2GameObject.GetComponent<Renderer>().material.color = NonPlayingCharacterMat.color;
+				P1GameObject.GetComponent<Renderer>().material.color = P1DefaultColor;
 				// Check if P1SFMChoice is done
 				if (P1Character.GetSFMChoosen() != EnumSFM.SFM.NONE)
 				{
@@ -66,7 +76,6 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 				}
 				break;
 			case EnumTurnTypes.TurnTypes.P1Ability:
-				print("P1Ability");
 				// De activate SFM Buttons GameObject
 				SetActiveSFMButtons(false);
 				SetActiveAbilityButtons(true);
@@ -77,7 +86,8 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 				}
 				break;
 			case EnumTurnTypes.TurnTypes.P2SFM:
-				print("P2SFM");
+				P1GameObject.GetComponent<Renderer>().material.color = NonPlayingCharacterMat.color;
+				P2GameObject.GetComponent<Renderer>().material.color = P2DefaultColor;
 				// Activate SFM Buttons GameObject
 				SetActiveSFMButtons(true);
 				SetActiveAbilityButtons(false);
@@ -90,7 +100,6 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 				}
 				break;
 			case EnumTurnTypes.TurnTypes.P2Ability:
-				print("P2Ability");
 				// De activate SFM Buttons GameObject
 				SetActiveSFMButtons(false);
 				SetActiveAbilityButtons(true);
@@ -101,14 +110,12 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 				}
 				break;
 			case EnumTurnTypes.TurnTypes.EndTurns:
-				print("ENd turns");
 				SetActiveSFMButtons(false);
 				SetActiveAbilityButtons(false);
 				// Faire les animations de SFM
 				// Faire les effets et les animations des Abilities
 				// Dire qui a gagné le SFM
 				roundWinner = PickRoundWinner();
-				print("Winner of round is: " + roundWinner);
 				EndRoundAnimations(roundWinner);
 				P1Character.ResetValues();
 				P2Character.ResetValues();
@@ -119,11 +126,6 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 				break;
 			case EnumTurnTypes.TurnTypes.EndGame:
 				DisplayGameOver();
-				print("PARTIE FINIE !");
-				if (P1RoundsWon >= 3)
-					print("P1 WON");
-				else if (P2RoundsWon >= 3)
-					print("P2 WOn");
 				break;
 		}
 	}

@@ -608,8 +608,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb3c297d3ab1994cadf23cb2ffc4659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  P1Character: {fileID: 2078903233}
-  P2Character: {fileID: 898708676}
+  P1GameObject: {fileID: 2078903228}
+  P2GameObject: {fileID: 898708671}
+  NonPlayingCharacterMat: {fileID: 2100000, guid: 81fe98ff93833b3469af9363e0d68410,
+    type: 2}
   ButtonRock: {fileID: 41691040}
   ButtonPaper: {fileID: 2046331572}
   ButtonScissors: {fileID: 1733077499}

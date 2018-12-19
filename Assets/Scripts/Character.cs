@@ -14,7 +14,6 @@ public class Character : MonoBehaviour {
 	public void SetSFMChoosen(EnumSFM.SFM newSFM)
 	{
 		SFMChoosen = newSFM;
-		print("Hello ! My SFM is :" + SFMChoosen);
 	}
 
 	public EnumSFM.SFM GetSFMChoosen()
@@ -25,7 +24,6 @@ public class Character : MonoBehaviour {
 	public void SetAbilityChoosen(int newAbility)
 	{
 		abilityChoosen = newAbility;
-		print("My Ability is : " + abilityChoosen);
 	}
 
 	public int GetAbilityChoosen()
