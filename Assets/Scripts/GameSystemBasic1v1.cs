@@ -20,6 +20,8 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 
 	public Text TextP1Score;
 	public Text TextP2Score;
+	public GameObject GameOverUI;
+	public Text TextGameOver;
 
 	private void Start()
 	{
@@ -124,6 +126,7 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 					currentTurn = EnumTurnTypes.TurnTypes.EndGame;
 				break;
 			case EnumTurnTypes.TurnTypes.EndGame:
+				DisplayGameOver();
 				print("PARTIE FINIE !");
 				if (P1RoundsWon >= 3)
 					print("P1 WON");
@@ -206,5 +209,13 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 	{
 		TextP1Score.text = P1RoundsWon.ToString();
 		TextP2Score.text = P2RoundsWon.ToString();
+	}
+
+	void DisplayGameOver()
+	{
+		int gameWinner = (P1RoundsWon >= 3) ? (1) : (2);
+
+		GameOverUI.SetActive(true);
+		TextGameOver.text = "What a game :\n\nCongratulations to Player " + gameWinner.ToString() + "\n\nRestart the game ?";
 	}
 }
