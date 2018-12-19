@@ -5,18 +5,18 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 
 	EnumTurnTypes.TurnTypes currentTurn;
 
-	Character P1Character;
-	Character P2Character;
+	public Character P1Character;
+	public Character P2Character;
 
 	int P1RoundsWon;
 	int P2RoundsWon;
 
-	GameObject ButtonRock;
-	GameObject ButtonPaper;
-	GameObject ButtonScissors;
-	GameObject ButtonAbility1;
-	GameObject ButtonAbility2;
-	GameObject ButtonAbility3;
+	public GameObject ButtonRock;
+	public GameObject ButtonPaper;
+	public GameObject ButtonScissors;
+	public GameObject ButtonAbility1;
+	public GameObject ButtonAbility2;
+	public GameObject ButtonAbility3;
 
 	public Text TextP1Score;
 	public Text TextP2Score;
@@ -26,16 +26,8 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 	private void Start()
 	{
 		currentTurn = EnumTurnTypes.TurnTypes.P1SFM;
-		P1Character = GameObject.Find("/P1").GetComponent<Character>();
-		P2Character = GameObject.Find("/P2").GetComponent<Character>();
 		P1RoundsWon = 0;
 		P2RoundsWon = 0;
-		ButtonRock = GameObject.Find("/UI").transform.GetChild(0).gameObject;
-		ButtonPaper = GameObject.Find("/UI").transform.GetChild(1).gameObject;
-		ButtonScissors = GameObject.Find("/UI").transform.GetChild(2).gameObject;
-		ButtonAbility1 = GameObject.Find("/UI").transform.GetChild(3).gameObject;
-		ButtonAbility2 = GameObject.Find("/UI").transform.GetChild(4).gameObject;
-		ButtonAbility3 = GameObject.Find("/UI").transform.GetChild(5).gameObject;
 	}
 
 	private bool CheckGameObjects()
@@ -216,6 +208,6 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 		int gameWinner = (P1RoundsWon >= 3) ? (1) : (2);
 
 		GameOverUI.SetActive(true);
-		TextGameOver.text = "What a game :\n\nCongratulations to Player " + gameWinner.ToString() + "\n\nRestart the game ?";
+		TextGameOver.text = "What a game !\n\nCongratulations to Player " + gameWinner.ToString() + "\n\nRestart the game ?";
 	}
 }
