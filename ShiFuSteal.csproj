@@ -230,8 +230,10 @@
     <Compile Include="Assets\Scripts\Enums\EnumSFM.cs" />
     <Compile Include="Assets\Scripts\Enums\EnumTurnTypes.cs" />
     <Compile Include="Assets\Scripts\GameSystemBasic1v1.cs" />
+    <Compile Include="Assets\Scripts\NbrLocalRounds.cs" />
     <Compile Include="Assets\Scripts\UI Related\ButtonSetPlayer.cs" />
     <Compile Include="Assets\Scripts\UI Related\ChangeScene.cs" />
+    <Compile Include="Assets\Scripts\UI Related\StoreInfos.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

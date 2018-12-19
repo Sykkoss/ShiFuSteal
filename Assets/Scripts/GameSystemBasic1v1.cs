@@ -119,7 +119,8 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 				EndRoundAnimations(roundWinner);
 				P1Character.ResetValues();
 				P2Character.ResetValues();
-				if (P1RoundsWon < 3 && P2RoundsWon < 3)
+				if (P1RoundsWon < NbrLocalRounds.numberRoundsNeeded &&
+					P2RoundsWon < NbrLocalRounds.numberRoundsNeeded)
 					currentTurn = EnumTurnTypes.TurnTypes.P1SFM;
 				else
 					currentTurn = EnumTurnTypes.TurnTypes.EndGame;
@@ -207,7 +208,7 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 
 	void DisplayGameOver()
 	{
-		int gameWinner = (P1RoundsWon >= 3) ? (1) : (2);
+		int gameWinner = (P1RoundsWon >= NbrLocalRounds.numberRoundsNeeded) ? (1) : (2);
 
 		GameOverUI.SetActive(true);
 		TextGameOver.text = "What a game !\n\nCongratulations to Player " + gameWinner.ToString() + "\n\nRestart the game ?";
