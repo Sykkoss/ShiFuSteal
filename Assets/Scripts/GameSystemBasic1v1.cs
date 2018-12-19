@@ -18,6 +18,9 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 	GameObject ButtonAbility2;
 	GameObject ButtonAbility3;
 
+	public Text TextP1Score;
+	public Text TextP2Score;
+
 	private void Start()
 	{
 		currentTurn = EnumTurnTypes.TurnTypes.P1SFM;
@@ -45,6 +48,7 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 	private void Update()
 	{
 		ManageTurns();
+		UpdateScores();
 	}
 
 	private void ManageTurns()
@@ -196,5 +200,11 @@ public class GameSystemBasic1v1 : MonoBehaviour {
 	public EnumTurnTypes.TurnTypes GetCurrentTurn()
 	{
 		return currentTurn;
+	}
+
+	void UpdateScores()
+	{
+		TextP1Score.text = P1RoundsWon.ToString();
+		TextP2Score.text = P2RoundsWon.ToString();
 	}
 }
